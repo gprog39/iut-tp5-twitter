@@ -2,19 +2,17 @@
   <div class="timeline">
     <h1>TWEETS</h1>
     <ul>
-      <li>v-for="tweet in tweets" {{ tweet }}</li>
+      <li v-for="tweet in tweets">
+        <tweet :tweet="tweet"/>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'timeline',
-  data () {
-    return {
-      tweets: ['tweet 1', 'tweet 2', 'tweet 3']
-   }
- }
+import Tweet from './Tweet'
+export default{
+  components: {Tweet}
 }
 </script>
 
@@ -28,9 +26,8 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-
 li {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
 }
 
