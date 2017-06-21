@@ -1,20 +1,20 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="timeline">
+    <h1>TWEETS</h1>
     <ul>
-      <li><router-link to="/timeline">Timeline</router-link></li>
+      <li>v-for="tweet in tweets" {{ tweet }}</li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Bienvenue sur Twitter'
-    }
-  }
+ name: 'timeline',
+ data () {
+   return {
+     tweets: ['tweet 1', 'tweet 2', 'tweet 3']
+   }
+ }
 }
 </script>
 
