@@ -9,10 +9,10 @@
 
 <script>
 export default {
- name: 'timeline',
- data () {
-   return {
-     tweets: ['tweet 1', 'tweet 2', 'tweet 3']
+  name: 'timeline',
+  data () {
+    return {
+      tweets: ['tweet 1', 'tweet 2', 'tweet 3']
    }
  }
 }
