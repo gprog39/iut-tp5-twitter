@@ -9,7 +9,7 @@
     </div>
     <div id="button">
     <ul>
-      <li class="button">  <icon name="reply"/> <icon name="retweet"/> <icon name="heart"/> <icon name="envelope"/></li>
+      <li class="button">  <icon name="reply"/> <a @click="retweet(tweet.id)"> </a> <icon name="retweet"/> {{tweet.retweeters.length}} <icon name="heart"/> <icon name="envelope"/></li>
      </ul>
     </div>
   </div>
