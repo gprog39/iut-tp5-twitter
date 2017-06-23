@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
     <h1> Tweets </h1>
-    <feed :tweets="tweets" :loading="loading"/>
+    <feed :tweets="tweets" :loading="loading" @retweeted="retweet"/>
   </div>
 </template>
 

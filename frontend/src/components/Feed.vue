@@ -6,7 +6,7 @@
     <div v-else>
       <ul>
         <li class = "tweet" v-for="tweet in tweets">
-          <tweet :tweet="tweet"/>
+          <tweet :tweet="tweet" @retweeted="retweet"/>
         </li>
       </ul>
     </div>
