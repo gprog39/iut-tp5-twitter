@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'tweet',
-  props: {auteur: 'tutu', contenu: 'tweet'}
+  props: ['tweet']
 }
 </script>
 

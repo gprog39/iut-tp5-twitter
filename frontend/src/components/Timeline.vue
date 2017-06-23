@@ -11,9 +11,33 @@
 
 <script>
 import Tweet from './Tweet'
+import Vue from 'vue'
+import Resource from 'vue-resource'
+Vue.use(Resource)
 export default{
-  components: {Tweet}
+  name: 'timeline',
+  data () {
+    return {
+      tweets: [{auteur: 'pp', contenu: 'haha'}, {auteur: 'jj', contenu: 'bg'}, {auteur: 'ff', contenu: 'hihihiahhha'}]
+    }
+  },
+  components: {Tweet},
+  methods: {
+    fetchTweets: function () {
+      this.$http.get('http://localhost:8080/list').then(response => {
+       // get body data
+        this.tweets = response.body
+        console.log(response.body)
+      }, response => {
+         // error callback
+      })
+    }
+  },
+  created () {
+    this.fetchTweets()
+  }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
