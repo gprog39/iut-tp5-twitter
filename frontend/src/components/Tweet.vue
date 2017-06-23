@@ -9,7 +9,7 @@
     </div>
     <div id="button">
     <ul>
-      <li class="button">  <icon name="reply"/> <a @click="retweet(tweet.id)"> </a> <icon name="retweet"/> {{tweet.retweeters.length}} <icon name="heart"/> <icon name="envelope"/></li>
+      <li class="button">  <icon name="reply"/> <a @click="retweet()"><icon name="retweet"/> </a>  {{tweet.retweeters.length}} <icon name="heart"/> <icon name="envelope"/></li>
      </ul>
     </div>
   </div>
@@ -29,6 +29,19 @@ export default {
   methods: {
     moment: function (date) {
       return moment(date)
+    },
+    retweet: function () {
+      this.$http.get('http://localhost:8080/retweet',
+        {
+          params: {
+            utilisateur: 'audioslave',
+            tweet: this.tweet.id
+          },
+          responseType: 'text'
+        },
+       resp => {
+         console.log('retweeté')
+       })
     }
   }
 }
