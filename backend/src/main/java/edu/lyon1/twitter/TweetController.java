@@ -36,7 +36,8 @@ public class TweetController {
     }
 
     @RequestMapping("/tweet")
-    public void tweet(@RequestParam("auteur") String auteur, @RequestParam("contenu") String contenu) {
+    public void tweet(@RequestParam("auteur") String handle, @RequestParam("contenu") String contenu) {
+        Utilisateur auteur=utilisateurRepository.findOne(handle);
         tweetRepository.save(new Tweet(contenu, auteur));
     }
 

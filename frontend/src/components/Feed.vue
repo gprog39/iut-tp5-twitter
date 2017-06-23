@@ -1,7 +1,7 @@
 <template>
   <div class="feed">
     <div v-if="loading === true">
-      Chargement...
+      Chargement des tweets en cours...
     </div>
     <div v-else>
       <ul>
